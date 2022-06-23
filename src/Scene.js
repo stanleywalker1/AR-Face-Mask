@@ -11,19 +11,19 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/scene-transformed.glb')
+  const { nodes, materials } = useGLTF('/assets/scene-transformed.glb')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[-89.84, -153.67, -4.57]}>
+      {/* <group rotation={[-Math.PI / 2, 0, 0]}>
+        <group rotation={[Math.PI / 2, 0, 0]}> */}
+          <group position={[-82, -167, -50]}>
             <mesh geometry={nodes.defaultMaterial.geometry} material={materials['16___Default']} />
             <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials['16___Default']} />
           </group>
-        </group>
-      </group>
+        {/* </group>
+      </group> */}
     </group>
   )
 }
 
-useGLTF.preload('/scene-transformed.glb')
+useGLTF.preload('/assets/scene-transformed.glb')
