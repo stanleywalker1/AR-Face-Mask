@@ -1,25 +1,8 @@
-# Zappar for React Three Fiber Example
+# Zappar for React Three Fiber ~ Demo with AR Facemask
 ​
-This repository contains an AR example using the Zappar SDK for React-Three-Fiber. This specific example uses `react-scripts` to compile and bundle the assets and code, and TypeScript to get full auto-complete and compile-time error checking.
-​
-To learn more about Zappar for React-Three-Fiber, head over to the [Zappar for React Three](https://www.npmjs.com/package/@zappar/zappar-react-three-fiber) (@zappar/zappar-react-three-fiber) page on npm.
-​
-## Preview
-​
-Scan the QR code below using your native camera app or QR code reader to view the example:
-​
-![Preview QR Code"](preview-qr-code.png)
-​
-## Prerequisites
-​
-To get started you'll want to ensure you have:
-​
-- installed Node.js version 10 or later
-- printed out the example target image, `example-tracking-image.png` (image tracked projects only)
+This repository is built from an AR example using the Zappar SDK for React-Three-Fiber. This specific example uses `react-scripts` to compile and bundle the assets and code, and TypeScript to get full auto-complete and compile-time error checking.
 ​
 ## Running the Project
-​
-Once you have cloned this repository, open a terminal in the root directory of this project and follow these steps to get started.
 ​
 Install the dependencies by running:
 ​
