@@ -9,18 +9,23 @@ import {
   ZapparCanvas,
   Loader,
   Pipeline,
-  Types
+  Types,
+  FaceLandmark
 } from '@zappar/zappar-react-three-fiber';
 import { useLoader } from '@react-three/fiber'
-import Scene from './Scene';
+
+//import Scene from './Scene';
 
 
-// import helmetSrc from './assets/maskLowPoly.glb'
+import helmetSrc from './assets/updated/maskDebug.glb'
+//import helmetSrc from './assets/demoHelmet/z_helmet.glb'
 
-// const Model = () => {
-//   const gltf = useLoader(GLTFLoader, helmetSrc) as any ;
-//   return <primitive object={gltf.scene} />;
-// };
+const Model = () => {
+  const gltf = useLoader(GLTFLoader, helmetSrc) as any ;
+   return <primitive scale={[.1, .1, .1]} position={[0.1, -.1, 0.1]} object={gltf.scene} />;
+  // return <primitive position={[0.25, -1.25, 0.1]} object={gltf.scene} />;
+  
+};
 
 function App() {
   const faceTrackerGroup = useRef<Types.FaceAnchorGroup>();
@@ -29,14 +34,19 @@ function App() {
     <ZapparCanvas>
       <ZapparCamera pipeline={pipeline} userFacing rearCameraMirrorMode="css" attachArray={undefined} attachObject={undefined} attachFns={undefined} />
       <FaceTracker ref={faceTrackerGroup} pipeline={pipeline} attachArray={undefined} attachObject={undefined} attachFns={undefined}>
+      {/* <FaceLandmark
+        target="nose-bridge"
+      > */}
         <Suspense fallback={null}>
-          {/* <HeadMaskMesh trackerGroup={faceTrackerGroup} /> */}
-          {/* <Model />*/}  
-          <Scene/>
+          <Model />  
+
+          {/* <Scene> below is my fix to rendering the model, seems to work the same as <Model> */}
+          {/* <Scene/> */}
         </Suspense>
+        {/* </FaceLandmark> */}
       </FaceTracker>
       <ambientLight intensity={0.6} />
-      <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
+      <directionalLight position={[2.5, 8, 5]} intensity={4.5} />
       {/* <Loader /> */}
     </ZapparCanvas>
   );
