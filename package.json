@@ -13,6 +13,7 @@
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/three": "^0.139.0",
+    "@zappar/splash": "^0.0.0-rc.1",
     "@zappar/zappar-react-three-fiber": "^1.2.3",
     "react": "^18.0.0",
     "react-app-rewired": "^2.1.8",
